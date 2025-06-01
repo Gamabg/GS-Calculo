@@ -1,65 +1,63 @@
-/* Reset básico */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* Estilo do corpo */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9fafb;
-  padding: 20px;
-  color: #111827;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    color: #333;
 }
 
-/* Título principal */
-h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #20232a;
+    color: #fff;
+    padding: 20px 40px;
+    flex-wrap: wrap;
 }
 
-/* Estilo dos cards */
+.header h1 {
+    font-size: 24px;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    padding: 40px;
+}
+
 .card {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.75rem;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease-in-out;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    height: 50%;
+    justify-self: center;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-}
-
-/* Títulos dentro dos cards */
-.subtitle {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-/* Listas */
-ul, ol {
-  margin-left: 20px;
-  margin-top: 10px;
-}
-
-li {
-  margin-bottom: 5px;
-}
-
-/* Gráfico responsivo */
 canvas {
-  max-width: 100%;
-  height: auto;
+    width: 50%;
+    height:40%;
+    margin-top: 20px;
 }
 
-/* Parágrafos */
-p {
-  margin-top: 10px;
-  line-height: 1.6;
-}
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #20232a;
+    color: #fff;
+
+    & span {
+        color: gray;
+    }
+}    
