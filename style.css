@@ -1,0 +1,65 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo do corpo */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+  padding: 20px;
+  color: #111827;
+}
+
+/* Título principal */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Estilo dos cards */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Títulos dentro dos cards */
+.subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Listas */
+ul, ol {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* Gráfico responsivo */
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Parágrafos */
+p {
+  margin-top: 10px;
+  line-height: 1.6;
+}

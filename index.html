@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento do Nível do Rio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: black;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .secao1 {
+            width: 100%;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .paicard {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .card {
+            width: 40%;
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .cardgrafico {
+            display: flex;
+            flex-direction: column;
+            justify-self: center;
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 50%;
+            height: 50%;
+            /* align-content: center; */
+        }
+
+        .cardref {
+            width: 88%;
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            justify-self: center;
+        }
+
+        h1 {
+            justify-self: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        p,
+        li {
+            font-size: 16px;
+            margin: 10px 0;
+            width: 90%;
+        }
+
+        canvas {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>Monitoramento do Nível do Rio</h1>
+
+        <div class="cardgrafico">
+            <h2>Função Matemática:</h2>
+            <p>f(x) = -0.05x³ + 0.7x² - 1.5x + 1</p>
+            <canvas id="graficoFuncao1"></canvas>
+        </div>
+    </section>
+    <section>
+        <div class="cardgrafico">
+            <p>g(x) = 0.02x³ - 0.3x² + 1.2x + 0.5</p>
+            <canvas id="graficoFuncao2"></canvas>
+        </div>
+
+        <div class="cardgrafico">
+            <h2>Gráfico do Nível Real do Rio</h2>
+            <canvas id="graficoReal"></canvas>
+        </div>
+    </section>
+    <section>
+        <div class="paicard">
+            <div class="card">
+                <h2>Análise</h2>
+                <ul id="analise"></ul>
+            </div>
+
+            <div class="card">
+                <h2>Descrição do Processo</h2>
+                <p>Escolhemos Blumenau, SC, uma cidade com histórico de enchentes. Criamos uma tabela simulando o nível
+                    do
+                    rio durante 10 dias seguidos de chuva intensa. Em seguida, usamos funções matemáticas para
+                    representar o
+                    comportamento do nível da água. Analisamos o domínio e a imagem dessas funções, identificamos os
+                    pontos
+                    máximos e os dias de risco, e por fim, geramos gráficos para facilitar a visualização e ajudar no
+                    planejamento de evacuação.</p>
+            </div>
+        </div>
+
+        <div class="cardref">
+            <h2>Referências</h2>
+            <ul>
+                <li><a href="https://www.gov.br/ana/pt-br" target="_blank" rel="noopener noreferrer">Agência Nacional de
+                        Águas (ANA)</a> – Monitoramento hidrológico e enchentes</li>
+                <li><a href="https://portal.inmet.gov.br/" target="_blank" rel="noopener noreferrer">Instituto Nacional
+                        de
+                        Meteorologia (INMET)</a> – Dados meteorológicos oficiais</li>
+                <li><a href="https://pt.khanacademy.org/math/algebra/polynomials" target="_blank"
+                        rel="noopener noreferrer">Khan Academy – Polinômios</a> – Aprenda funções polinomiais básicas
+                </li>
+                <li>Livro: <em>Modelagem Matemática: Uma abordagem aplicada</em> – Edward A. Bender</li>
+                <li><a href="https://www.chartjs.org/docs/latest/" target="_blank" rel="noopener noreferrer">Chart.js
+                        Documentation</a> – Biblioteca para criação de gráficos em JavaScript</li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const dados = [0.5, 0.8, 1.2, 1.8, 2.3, 2.6, 2.9, 2.7, 2.4, 2.0];
+        const dias = Array.from({ length: 10 }, (_, i) => i + 1);
+
+        function funcao1(x) {
+            return -0.05 * Math.pow(x, 3) + 0.7 * Math.pow(x, 2) - 1.5 * x + 1;
+        }
+
+        function funcao2(x) {
+            return 0.02 * Math.pow(x, 3) - 0.3 * Math.pow(x, 2) + 1.2 * x + 0.5;
+        }
+
+        function calcularValores(funcao, dias) {
+            return dias.map(funcao);
+        }
+
+        function identificarDiasDeRisco(dados, limite) {
+            return dias.filter((d, i) => dados[i] > limite);
+        }
+
+        function encontrarMaximo(dados) {
+            const max = Math.max(...dados);
+            const dia = dados.indexOf(max) + 1;
+            return { max, dia };
+        }
+
+        const valoresFuncao1 = calcularValores(funcao1, dias);
+        const valoresFuncao2 = calcularValores(funcao2, dias);
+
+        const risco = identificarDiasDeRisco(dados, 2);
+        const { max, dia } = encontrarMaximo(dados);
+
+        const analise = `
+      <li>Domínio: dias de 1 a 10.</li>
+      <li>Imagem: níveis de ${Math.min(...dados)}m a ${max}m.</li>
+      <li>Ponto máximo: ${max}m no dia ${dia}.</li>
+      <li>Dias de risco (>2m): ${risco.join(', ')}</li>
+    `;
+
+        document.getElementById('analise').innerHTML = analise;
+
+        function criarGrafico(id, label, data, color) {
+            const ctx = document.getElementById(id).getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dias,
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        borderColor: color,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+        }
+
+        criarGrafico('graficoFuncao1', 'Função Aproximada 1', valoresFuncao1, 'red');
+        criarGrafico('graficoFuncao2', 'Função Aproximada 2', valoresFuncao2, 'green');
+        criarGrafico('graficoReal', 'Nível Real do Rio', dados, 'blue');
+    </script>
+</body>
+
+</html>
