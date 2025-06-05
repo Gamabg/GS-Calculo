@@ -2,7 +2,7 @@ const ctx = document.getElementById("graficoNiveis").getContext("2d");
 
 // Dias e níveis simulados de um rio em metros
 const dias = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const niveis = dias.map((x) => (-0.05 * x ** 3 + 0.63 * x ** 2 - 1.7 * x + 1).toFixed(2));
+const niveis = dias.map((x) => Math.min(-0.05 * x ** 3 + 0.63 * x ** 2 - 1.2 * x + 1, 3).toFixed(2));
 
 const risco = niveis.map((n) => (parseFloat(n) > 2 ? "#ff4d4f" : "#0077a8"));
 

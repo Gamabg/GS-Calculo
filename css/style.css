@@ -5,6 +5,20 @@ body {
     color: #222;
 }
 
+h1{
+    font-size: 2.5rem;
+    animation: none;
+    font-weight: 800;
+    /* text-decoration: none; */
+    color: white;
+    transform: 0.3s ease;
+}
+
+h1:hover{
+    text-transform: uppercase;
+    text-shadow: 0 0 60px #222;
+}
+
 .header {
     display: flex;
     justify-content: space-around;
@@ -13,20 +27,6 @@ body {
     color: #fff;
     padding: 2rem 0;
     flex-wrap: wrap;
-
-
-    & a {
-        font-size: 2.5rem;
-        animation: none;
-        font-weight: 800;
-        color: white;
-        transform: 0.3s ease;
-    }
-
-    & a:hover {
-        text-transform: uppercase;
-        text-shadow: 0 0 60px #222;
-    }
 
     & nav ul {
         list-style: none;
@@ -40,6 +40,26 @@ body {
         font-weight: bold;
     }
 }
+
+a {
+    font-size: 2.5rem;
+    animation: none;
+    font-weight: 800;
+    /* text-decoration: none; */
+    color: white;
+    transform: 0.3s ease;
+}
+
+a:hover{
+    text-transform: uppercase;
+    text-shadow: 0 0 60px #222;
+}
+
+    & a:hover {
+        text-transform: uppercase;
+        text-shadow: 0 0 60px #222;
+    }
+
 
 .header & .backhome {
     font-size: 24px;
