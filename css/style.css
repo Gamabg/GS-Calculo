@@ -3,9 +3,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f7f9fb;
     color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-h1{
+h1 {
     font-size: 2.5rem;
     animation: none;
     font-weight: 800;
@@ -14,7 +17,7 @@ h1{
     transform: 0.3s ease;
 }
 
-h1:hover{
+h1:hover {
     text-transform: uppercase;
     text-shadow: 10 20 60px #222;
 }
@@ -37,15 +40,15 @@ a {
     transform: 0.3s ease;
 }
 
-a:hover{
+a:hover {
     text-transform: uppercase;
     text-shadow: 0 0 60px #222;
 }
 
-    & a:hover {
-        text-transform: uppercase;
-        text-shadow: 10 20 60px #222;
-    }
+& a:hover {
+    text-transform: uppercase;
+    text-shadow: 10 20 60px #222;
+}
 
 
 .header & .backhome {
@@ -65,7 +68,8 @@ a:hover{
         border-radius: 12px;
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        color: #222; /* texto escuro para contraste */
+        color: #222;
+        /* texto escuro para contraste */
         width: 80%;
         max-width: 900px;
         margin: 40px auto;
@@ -73,7 +77,7 @@ a:hover{
     }
 }
 
-.transbordar{
+.transbordar {
     font-size: 1rem;
     font-weight: 800;
     color: black;
@@ -99,12 +103,19 @@ canvas {
 }
 
 footer {
+    width: 100%;
     text-align: center;
     padding: 20px;
-    background: #20232a;
+    background: linear-gradient(to right, #00557f, #0099cc);
     color: #fff;
-
-    & span {
-        color: gray;
-    }
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-top: 40px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    
 }
