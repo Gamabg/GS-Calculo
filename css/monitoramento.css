@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fb;
+    color: #222;
+}
+
+header {
+    background: linear-gradient(to right, #00557f, #0099cc);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1080px;
+    margin: auto;
+    padding: 1rem;
+}
+
+a{
+    font-size: 2.5rem;
+    animation: none;
+    font-weight: 800;
+    /* text-decoration: none; */
+    color: white;
+    transform: 0.3s ease;
+}
+
+a:hover{
+    text-transform: uppercase;
+    text-shadow: 0 0 60px #222;
+}
+
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #004466;
+}
+
+.intro {
+    margin-bottom: 2rem;
+}
+
+.grafico-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.imagem {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.analise {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background: white;
+    border-left: 6px solid #0099cc;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #006699;
+    margin-bottom: 0.5rem;
+}
+
+.acao {
+    background: #e0f7ff;
+    border-left: 6px solid #0077a8;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+footer {
+    background: #004466;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.graficos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding: 40px 0;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HidroFlow | Monitoramento de Enchentes</title>
+    <link rel="stylesheet" href="/css/monitoramento.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="/pags/index.html" >HidroFlow</a>
+            <p>Monitoramento inteligente do nível do rio</p>
+        </div>
+    </header>
+    <main class="container">
+        <section class="intro">
+            <h2>Dados de Monitoramento</h2>
+            <p>
+                Acompanhe o nível do rio durante os 10 dias consecutivos de chuva em Petrópolis (RJ),
+                com previsão de risco de transbordamento e plano de evacuação.
+            </p>
+        </section>
+        <section class="grafico-section">
+            <canvas id="graficoNiveis"></canvas>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HidroFlow. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/js/monitoramento.js"></script>
+</body>
+
+</html>
