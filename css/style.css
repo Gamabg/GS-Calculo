@@ -6,6 +6,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    viewport-fit: cover;   
+    scroll-behavior: smooth;
 }
 
 h1 {
@@ -61,9 +63,11 @@ a:hover {
 
 
 .container {
+    flex: 1;
     padding: 40px;
 
     & .card {
+        border-left: 5px solid #0099cc;
         background: #fff;
         border-radius: 12px;
         padding: 20px;
@@ -76,6 +80,26 @@ a:hover {
         font-size: 1.1rem;
     }
 }
+
+.cardref {
+        border-left: 5px solid #0099cc;
+        /* border-color: red; */
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        color: #222;
+        /* texto escuro para contraste */
+        width: 80%;
+        max-width: 900px;
+        margin: 40px auto;
+        font-size: 1.1rem;
+
+        & a{
+            font-weight:500;
+            color: #00557f;
+        }
+    }
 
 .transbordar {
     font-size: 1rem;
@@ -102,6 +126,13 @@ canvas {
     height: 50%;
 }
 
+.referencias{
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: black;
+    margin-top: 20px;
+}
+
 footer {
     width: 100%;
     text-align: center;
@@ -110,12 +141,7 @@ footer {
     color: #fff;
     font-size: 1.5rem;
     font-weight: 800;
-    margin-top: 40px;
+    /* margin-top: 800px; */
     height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 0;
-    
+
 }
